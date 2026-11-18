@@ -1,0 +1,17 @@
+.gradle
+.idea
+/out/
+/build/
+gradle-app.setting
+.gradletasknamecache
+.git
+.idea/
+/releases/
+/temp/
+# IDE build output and editor settings
+/bin/
+.vscode/
+# local Claude Code files
+.claude/
+# local guidance with machine-specific paths, keep out of the repo
+CLAUDE.md
