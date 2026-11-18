@@ -1,0 +1,48 @@
+// Burp Suite Extension Name: Sharpener
+// Copyright (C) 2021-2026 Soroush Dalili (@irsdl)
+// Released under AGPL v3.0 with additional terms, see the LICENSE and NOTICE files
+// Developed by Soroush Dalili (@irsdl)
+// Project link: https://github.com/irsdl/BurpSuiteSharpenerEx
+
+package ninja.burpsuite.extension.sharpener.capabilities.implementations;
+
+import ninja.burpsuite.extension.sharpener.ExtensionSharedParameters;
+import ninja.burpsuite.extension.sharpener.capabilities.objects.Capability;
+import ninja.burpsuite.extension.sharpener.capabilities.objects.CapabilityGroup;
+import ninja.burpsuite.extension.sharpener.capabilities.objects.CapabilitySettings;
+import ninja.burpsuite.libs.objects.PreferenceObject;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+public class ManualHighlighterSettings extends CapabilitySettings {
+    public ManualHighlighterSettings(ExtensionSharedParameters sharedParameters) {
+        super(sharedParameters,
+                new Capability("Proxy Manual Highlighter",
+                        "Use TempColorCOLORNAME to highlight requests, Use PermColorCOLORNAME to highlight both requests and responses",
+                        "manualHighlightCapability",
+                        Arrays.asList(CapabilityGroup.PROXY_REQUEST_HANDLER, CapabilityGroup.PROXY_RESPONSE_HANDLER, CapabilityGroup.WEBSOCKET_CREATION_HANDLER),
+                        "ninja.burpsuite.extension.sharpener.capabilities.implementations.ManualHighlighterRequestResponseHandler",
+                        10000, true));
+    }
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public Collection<PreferenceObject> definePreferenceObjectCollection() {
+        return null;
+    }
+
+    @Override
+    public void loadSettings() {
+
+    }
+
+    @Override
+    public void unloadSettings() {
+
+    }
+}
